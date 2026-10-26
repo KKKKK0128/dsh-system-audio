@@ -1,0 +1,14 @@
+# 依赖与本地状态
+node_modules/
+.pnpm-store/
+
+# 采集/测试产物：都由 .test/ 里的脚本重新生成，不入库
+*.wav
+*.log
+*-log.txt
+stdio-probe.txt
+
+# 系统噪声
+Thumbs.db
+.DS_Store
+desktop.ini

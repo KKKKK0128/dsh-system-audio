@@ -1,0 +1,8 @@
+# dsh-system-audio bundle patch.
+#
+# This bundle contributes ONE host row: the plugin that records the machine's
+# playback (WASAPI loopback) and feeds it to the local speech-to-text provider.
+# Only an additive `insert` row — nothing shipped by DSH is overridden.
+- insert:
+    - id: system-audio
+      name: 'dsh-system-audio'

@@ -1,0 +1,65 @@
+{
+  "name": "dsh-system-audio",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Capture Windows system output audio (WASAPI loopback) and turn it into voice input through DSH's local speech-to-text.",
+  "author": "KKKKK0128",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKKKK0128/dsh-system-audio.git"
+  },
+  "homepage": "https://github.com/KKKKK0128/dsh-system-audio#readme",
+  "bugs": {
+    "url": "https://github.com/KKKKK0128/dsh-system-audio/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "system-audio",
+    "loopback",
+    "speech-to-text",
+    "voice-input",
+    "wasapi"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./recorder": "./lib/recorder.js",
+    "./speech": "./lib/speech.js",
+    "./routes": "./lib/routes.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "native/LoopbackRecorder.exe",
+    "native/LoopbackRecorder.cs",
+    "native/build.cmd",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    },
+    "manifestVersion": 1
+  }
+}
